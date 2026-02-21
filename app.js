@@ -13,8 +13,11 @@ function createGrid(size) {
     let r = Math.floor(Math.random() * 256);
     let g = Math.floor(Math.random() * 256);
     let b = Math.floor(Math.random() * 256);
+    let opacity = 0;
     box.addEventListener("mouseover", () => {
-      box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+      opacity += 0.1;
+      if (opacity > 1) opacity = 1;
+      box.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${opacity})`;
     });
 
     container.appendChild(box);
